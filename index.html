@@ -3,209 +3,223 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-pt="Gabriel Guedes — Desenvolvedor" data-en="Gabriel Guedes — Developer">Gabriel Guedes — Desenvolvedor</title>
+    <title>Gabriel Guedes — Desenvolvedor Full Stack</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Navigation -->
+    <div class="bg-grid"></div>
+
+    <!-- Navbar -->
     <nav class="navbar">
         <div class="nav-container">
             <a href="#" class="logo">
-                <span class="logo-accent">Gabriel</span><span> Guedes</span>
+                <img src="https://avatars.githubusercontent.com/u/160267284?v=4" alt="Gabriel Guedes" class="logo-avatar">
+                <span>Gabriel Guedes</span>
             </a>
             <ul class="nav-menu">
-                <li><a href="#work" data-pt="Trabalho" data-en="Work">Trabalho</a></li>
-                <li><a href="#about" data-pt="Sobre" data-en="About">Sobre</a></li>
-                <li><a href="#skills" data-pt="Habilidades" data-en="Skills">Habilidades</a></li>
-                <li><a href="#contact" class="nav-cta" data-pt="Contato" data-en="Contact">Contato</a></li>
+                <li><a href="#about">Sobre</a></li>
+                <li><a href="#experience">Experiência</a></li>
+                <li><a href="#projects">Projetos</a></li>
+                <li><a href="#skills">Habilidades</a></li>
             </ul>
-            <div class="language-switcher">
-                <button class="lang-btn active" data-lang="pt">PT</button>
-                <span class="lang-divider">/</span>
-                <button class="lang-btn" data-lang="en">EN</button>
-            </div>
+            <a href="#contact" class="btn-pill btn-pill-primary nav-cta">Vamos conversar</a>
             <button class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
+                <span></span><span></span><span></span>
             </button>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <div class="hero-text">
-                <h1 class="hero-title">
-                    <span class="line">
-                        <span class="highlight" data-pt="Desenvolvedor" data-en="Developer">Desenvolvedor</span>
-                    </span>
-                </h1>
-                <p class="hero-subtitle" data-pt="Criando experiências digitais intuitivas através de código" data-en="Crafting intuitive digital experiences through code">Criando experiências digitais intuitivas através de código</p>
-                <p class="hero-description" data-pt="Desenvolvedor Full Stack com expertise em JavaScript, Python e tecnologias web modernas. Construindo interfaces que importam." data-en="Full Stack developer with expertise in JavaScript, Python, and modern web technologies. Building interfaces that matter.">Desenvolvedor Full Stack com expertise em JavaScript, Python e tecnologias web modernas. Construindo interfaces que importam.</p>
-                <div class="hero-actions">
-                    <a href="#work" class="btn btn-primary" data-pt="Explorar Trabalho" data-en="Explore Work">Explorar Trabalho</a>
-                    <a href="Curriculo_Gabriel_Silva_Guedes.pdf" download class="btn btn-secondary" data-pt="Baixar CV" data-en="Download CV">Baixar CV</a>
-                </div>
-            </div>
-            <div class="hero-visual">
-                <div class="avatar-container">
-                    <img src="https://avatars.githubusercontent.com/u/160267284?v=4" alt="G3EDES" class="avatar">
-                    <div class="avatar-glow"></div>
-                </div>
-            </div>
-        </div>
-        <div class="hero-scroll">
-            <span data-pt="Rolar para explorar" data-en="Scroll to explore">Rolar para explorar</span>
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                <path d="M12 5v14M19 14l-7 7-7-7"/>
-            </svg>
-        </div>
-    </section>
+    <!-- Hero -->
+    <header class="hero">
+        <div class="hero-inner">
+            <span class="badge"><span class="badge-dot"></span>Aberto a novas oportunidades</span>
 
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="about-content">
+            <div class="hero-main">
+                <img src="https://avatars.githubusercontent.com/u/160267284?v=4" alt="Gabriel Guedes" class="hero-avatar">
+                <div>
+                    <p class="hero-greeting">Olá, eu sou Gabriel 👋</p>
+                    <h1 class="hero-title">Desenvolvedor Full Stack em formação, construindo com propósito.</h1>
+                </div>
+            </div>
+
+            <p class="hero-description">Transformo lógica e aprendizado em aplicações reais — do front-end ao back-end.</p>
+
+            <div class="hero-actions">
+                <a href="#projects" class="btn-pill btn-pill-primary">Ver projetos</a>
+                <a href="#contact" class="btn-pill btn-pill-outline">Falar comigo</a>
+                <div class="hero-socials">
+                    <a href="https://github.com/g3edes" target="_blank" rel="noopener noreferrer" title="GitHub" class="icon-link">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                    </a>
+                    <a href="https://www.linkedin.com/in/gabriel-silva-guedes-84b507327" target="_blank" rel="noopener noreferrer" title="LinkedIn" class="icon-link">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.475-2.236-1.986-2.236-1.081 0-1.722.722-2.004 1.418-.103.249-.129.597-.129.946v5.441h-3.554s.047-8.733 0-9.633h3.554v1.362c.429-.658 1.196-1.595 2.905-1.595 2.122 0 3.714 1.383 3.714 4.36v5.506zM5.337 8.855c-1.144 0-1.915-.759-1.915-1.71 0-.955.768-1.71 1.959-1.71 1.188 0 1.914.754 1.939 1.71 0 .951-.751 1.71-1.983 1.71zm1.581 11.597H3.754V9.819h3.164v10.633zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg>
+                    </a>
+                </div>
+            </div>
+
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-number" id="repoCount">50+</span>
+                    <span class="stat-label">repositórios no GitHub</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">5</span>
+                    <span class="stat-label">linguagens de programação</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">1º</span>
+                    <span class="stat-label">estágio em tecnologia</span>
+                </div>
+            </div>
+
+            <a href="#about" class="hero-scroll">Saiba mais sobre mim <span>↓</span></a>
+        </div>
+    </header>
+
+    <!-- About -->
+    <section id="about" class="section about">
+        <span class="eyebrow">Sobre mim</span>
+        <div class="about-grid">
             <div class="about-text">
-                <h2 class="section-title" data-pt="Sobre Mim" data-en="About Me">Sobre Mim</h2>
-                <p data-pt="Estudante de Sistemas de Informação com experiência prática em suporte técnico e desenvolvimento de software. Apaixonado por criar soluções elegantes para problemas complexos através de código limpo e mantível." data-en="Systems Information student with practical experience in technical support and software development. Passionate about creating elegant solutions to complex problems through clean, maintainable code.">Estudante de Sistemas de Informação com experiência prática em suporte técnico e desenvolvimento de software. Apaixonado por criar soluções elegantes para problemas complexos através de código limpo e mantível.</p>
-                <p data-pt="Atualmente trabalhando na Inova Tecnologia como Estagiário de Suporte Técnico (N1/N2), lidando com migrações de banco de dados, queries SQL e troubleshooting de sistemas. Aprendendo continuamente e explorando novas tecnologias." data-en="Currently working at Inova Tecnologia as a Technical Support Intern (N1/N2), handling database migrations, SQL queries, and system troubleshooting. Continuously learning and exploring new technologies.">Atualmente trabalhando na Inova Tecnologia como Estagiário de Suporte Técnico (N1/N2), lidando com migrações de banco de dados, queries SQL e troubleshooting de sistemas. Aprendendo continuamente e explorando novas tecnologias.</p>
+                <p>Tenho experiência prática como <strong>estagiário de Suporte Técnico (N1/N2)</strong>, atuando com bancos de dados relacionais, scripts SQL e resolução de problemas em sistemas — foi aí que descobri o quanto gosto de entender como as coisas funcionam por dentro.</p>
+                <p>Concluí o curso técnico de <strong>Análise e Desenvolvimento de Sistemas no SENAI Jandira</strong> e hoje curso <strong>Bacharelado em Sistemas de Informação na UNINOVE</strong>, aprofundando meus conhecimentos em lógica de programação, back-end e front-end.</p>
+                <p>Gosto de aprender rápido, trabalhar em equipe com metodologias ágeis e busco crescer como <strong>Desenvolvedor Júnior</strong>, aplicando o que aprendo em projetos reais.</p>
             </div>
-            <div class="about-grid">
-                <div class="about-card">
-                    <h3 data-pt="Educação" data-en="Education">Educação</h3>
-                    <ul>
-                        <li data-pt="Bacharelado em Sistemas de Informação (2026-2030) — UNINOVE" data-en="Bachelor's in Systems Information (2026-2030) — UNINOVE">Bacharelado em Sistemas de Informação (2026-2030) — UNINOVE</li>
-                        <li data-pt="Análise e Desenvolvimento de Sistemas (2024-2025) — SENAI" data-en="Systems Analysis & Development (2024-2025) — SENAI">Análise e Desenvolvimento de Sistemas (2024-2025) — SENAI</li>
-                    </ul>
+            <div class="about-cards">
+                <div class="info-card">
+                    <span class="info-label">Localização</span>
+                    <span class="info-value">São Paulo, SP</span>
                 </div>
-                <div class="about-card">
-                    <h3 data-pt="Experiência" data-en="Experience">Experiência</h3>
-                    <ul>
-                        <li data-pt="Suporte Técnico (N1/N2) — Inova Tecnologia (2026-Atual)" data-en="Technical Support (N1/N2) — Inova Tecnologia (2026-Current)">Suporte Técnico (N1/N2) — Inova Tecnologia (2026-Atual)</li>
-                        <li data-pt="Administração SQL & Banco de Dados" data-en="SQL & Database Administration">Administração SQL & Banco de Dados</li>
-                        <li data-pt="Configuração e Manutenção de Sistemas" data-en="System Configuration & Maintenance">Configuração e Manutenção de Sistemas</li>
-                    </ul>
+                <div class="info-card">
+                    <span class="info-label">Formação</span>
+                    <span class="info-value">Sistemas de Informação — UNINOVE</span>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Work Section -->
-    <section id="work" class="work">
-        <h2 class="section-title" data-pt="Trabalho em Destaque" data-en="Featured Work">Trabalho em Destaque</h2>
-        <div class="work-grid" id="workGrid">
-            <div class="work-loading" data-pt="Carregando projetos..." data-en="Loading projects...">Carregando projetos...</div>
-        </div>
-        <div class="work-cta">
-            <a href="https://github.com/g3edes" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" data-pt="Ver Todos no GitHub →" data-en="View All on GitHub →">Ver Todos no GitHub →</a>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="skills">
-        <h2 class="section-title" data-pt="Arsenal Técnico" data-en="Technical Arsenal">Arsenal Técnico</h2>
-        <div class="skills-container">
-            <div class="skill-column">
-                <h3 data-pt="Linguagens" data-en="Languages">Linguagens</h3>
-                <div class="skill-tags">
-                    <span class="skill-tag">Python</span>
-                    <span class="skill-tag">JavaScript</span>
-                    <span class="skill-tag">Kotlin</span>
-                    <span class="skill-tag">C</span>
-                    <span class="skill-tag">C#</span>
+                <div class="info-card">
+                    <span class="info-label">Atuação</span>
+                    <span class="info-value">Suporte Técnico N1/N2 — Inova Tecnologia</span>
                 </div>
-            </div>
-            <div class="skill-column">
-                <h3 data-pt="Frontend" data-en="Frontend">Frontend</h3>
-                <div class="skill-tags">
-                    <span class="skill-tag">React</span>
-                    <span class="skill-tag">HTML5</span>
-                    <span class="skill-tag">CSS3</span>
-                    <span class="skill-tag">JavaScript</span>
-                </div>
-            </div>
-            <div class="skill-column">
-                <h3 data-pt="Backend" data-en="Backend">Backend</h3>
-                <div class="skill-tags">
-                    <span class="skill-tag">Node.js</span>
-                    <span class="skill-tag">Express</span>
-                    <span class="skill-tag">REST APIs</span>
-                    <span class="skill-tag">Firebase</span>
-                </div>
-            </div>
-            <div class="skill-column">
-                <h3 data-pt="Banco de Dados" data-en="Databases">Banco de Dados</h3>
-                <div class="skill-tags">
-                    <span class="skill-tag">SQL Server</span>
-                    <span class="skill-tag">MySQL</span>
-                    <span class="skill-tag">MongoDB</span>
-                    <span class="skill-tag">Oracle</span>
-                </div>
-            </div>
-            <div class="skill-column">
-                <h3 data-pt="Mobile" data-en="Mobile">Mobile</h3>
-                <div class="skill-tags">
-                    <span class="skill-tag">Kotlin</span>
-                    <span class="skill-tag">Android</span>
-                    <span class="skill-tag">Firebase</span>
-                </div>
-            </div>
-            <div class="skill-column">
-                <h3 data-pt="Ferramentas" data-en="Tools">Ferramentas</h3>
-                <div class="skill-tags">
-                    <span class="skill-tag">Git</span>
-                    <span class="skill-tag">GitHub</span>
-                    <span class="skill-tag">Jest</span>
-                    <span class="skill-tag">Scrum</span>
+                <div class="info-card">
+                    <span class="info-label">Foco de estudo</span>
+                    <span class="info-value">Desenvolvimento Full Stack</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="contact-content">
-            <h2 class="section-title" data-pt="Vamos Criar Algo?" data-en="Let's Create Something">Vamos Criar Algo?</h2>
-            <p class="contact-subtitle" data-pt="Sempre interessado em ouvir sobre novos projetos e oportunidades." data-en="I'm always interested in hearing about new projects and opportunities.">Sempre interessado em ouvir sobre novos projetos e oportunidades.</p>
-
-            <div class="contact-grid">
-                <div class="contact-method">
-                    <h3 data-pt="Email" data-en="Email">Email</h3>
-                    <a href="mailto:gsilvaguedes4@gmail.com">gsilvaguedes4@gmail.com</a>
-                </div>
-                <div class="contact-method">
-                    <h3 data-pt="Telefone" data-en="Phone">Telefone</h3>
-                    <a href="tel:+5511978941322">(11) 97894-1322</a>
-                </div>
-                <div class="contact-method">
-                    <h3>GitHub</h3>
-                    <a href="https://github.com/g3edes" target="_blank" rel="noopener noreferrer">github.com/g3edes</a>
-                </div>
-                <div class="contact-method">
-                    <h3>LinkedIn</h3>
-                    <a href="https://linkedin.com/in/gabriel-silva-guedes-84b507327" target="_blank" rel="noopener noreferrer">Gabriel Silva Guedes</a>
-                </div>
+    <!-- Experience -->
+    <section id="experience" class="section experience">
+        <span class="eyebrow">Experiência &amp; Formação</span>
+        <div class="timeline">
+            <div class="timeline-item">
+                <span class="timeline-date">ABRIL DE 2026 — ATUAL</span>
+                <h3>Estagiário de Suporte Técnico (N1/N2)</h3>
+                <p class="timeline-org">Inova Tecnologia</p>
+                <p>Consultas e scripts SQL, migração de bancos de dados (Access → SQL Server), diagnóstico de incidentes de software, hardware e redes, atendimento remoto e abertura de chamados via GLPI.</p>
             </div>
-
-            <form class="contact-form" id="contactForm">
-                <div class="form-group">
-                    <input type="text" id="name" placeholder="Seu nome" data-pt-placeholder="Seu nome" data-en-placeholder="Your name" required>
-                </div>
-                <div class="form-group">
-                    <input type="email" id="email" placeholder="Seu email" data-pt-placeholder="Seu email" data-en-placeholder="Your email" required>
-                </div>
-                <div class="form-group">
-                    <textarea id="message" placeholder="Sua mensagem" data-pt-placeholder="Sua mensagem" data-en-placeholder="Your message" rows="5" required></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary" data-pt="Enviar Mensagem" data-en="Send Message">Enviar Mensagem</button>
-            </form>
+            <div class="timeline-item">
+                <span class="timeline-date">2026 — 2030 · EM ANDAMENTO</span>
+                <h3>Bacharelado em Sistemas de Informação</h3>
+                <p class="timeline-org">UNINOVE</p>
+                <p>Graduação em andamento, com foco em desenvolvimento de software e fundamentos de engenharia de sistemas.</p>
+            </div>
+            <div class="timeline-item">
+                <span class="timeline-date">2024 — 2025 · CONCLUÍDO</span>
+                <h3>Análise e Desenvolvimento de Sistemas</h3>
+                <p class="timeline-org">SENAI Jandira</p>
+                <p>Formação técnica com projetos práticos de front-end, back-end e boas práticas de desenvolvimento.</p>
+            </div>
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- Projects -->
+    <section id="projects" class="section projects">
+        <div class="section-header">
+            <span class="eyebrow">Projetos</span>
+            <a href="https://github.com/g3edes" target="_blank" rel="noopener noreferrer" class="link-arrow">Ver todos no GitHub →</a>
+        </div>
+        <div class="projects-grid" id="projectsGrid">
+            <div class="loading">Carregando projetos...</div>
+        </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="section skills">
+        <span class="eyebrow">Habilidades</span>
+        <p class="skills-intro">Tecnologias e ferramentas que uso no dia a dia, entre projetos pessoais, o estágio na Inova Tecnologia e os estudos na faculdade.</p>
+        <div class="skills-grid">
+            <div class="skill-block">
+                <h3>Linguagens</h3>
+                <div class="tag-list">
+                    <span class="tag">Python</span>
+                    <span class="tag">JavaScript</span>
+                    <span class="tag">Kotlin</span>
+                    <span class="tag">C</span>
+                    <span class="tag">C#</span>
+                </div>
+            </div>
+            <div class="skill-block">
+                <h3>Front-end</h3>
+                <div class="tag-list">
+                    <span class="tag">React</span>
+                    <span class="tag">HTML</span>
+                    <span class="tag">CSS</span>
+                    <span class="tag">JavaScript</span>
+                </div>
+            </div>
+            <div class="skill-block">
+                <h3>Back-end</h3>
+                <div class="tag-list">
+                    <span class="tag">Node.js</span>
+                    <span class="tag">APIs REST</span>
+                    <span class="tag">JSON</span>
+                </div>
+            </div>
+            <div class="skill-block">
+                <h3>Banco de Dados</h3>
+                <div class="tag-list">
+                    <span class="tag">SQL Server</span>
+                    <span class="tag">MySQL</span>
+                    <span class="tag">Oracle</span>
+                </div>
+            </div>
+            <div class="skill-block">
+                <h3>Cloud &amp; Metodologias</h3>
+                <div class="tag-list">
+                    <span class="tag">Azure</span>
+                    <span class="tag">AWS</span>
+                    <span class="tag">Scrum</span>
+                </div>
+            </div>
+            <div class="skill-block">
+                <h3>Ferramentas</h3>
+                <div class="tag-list">
+                    <span class="tag">Git</span>
+                    <span class="tag">GitHub</span>
+                    <span class="tag">GLPI</span>
+                    <span class="tag">TeamViewer</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section contact">
+        <span class="eyebrow">Contato</span>
+        <h2 class="contact-title">Tem um projeto em mente ou quer trocar uma ideia?<br>Me manda uma mensagem.</h2>
+        <p class="contact-sub">Respondo por qualquer um dos canais abaixo — e-mail e LinkedIn são os mais rápidos.</p>
+        <div class="contact-buttons">
+            <a href="mailto:gsilvaguedes4@gmail.com" class="btn-pill btn-pill-primary">gsilvaguedes4@gmail.com</a>
+            <a href="tel:+5511978941322" class="btn-pill btn-pill-outline">(11) 97894-1322</a>
+        </div>
+        <div class="contact-socials">
+            <a href="https://www.linkedin.com/in/gabriel-silva-guedes-84b507327" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href="https://github.com/g3edes" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="Curriculo_Gabriel_Silva_Guedes.pdf" download>Baixar Currículo</a>
+        </div>
+    </section>
+
     <footer class="footer">
-        <p data-pt="© 2026 G3EDES. Crafted with code and creativity." data-en="© 2026 G3EDES. Crafted with code and creativity.">© 2026 G3EDES. Crafted with code and creativity.</p>
+        <p>© 2026 Gabriel Guedes. Todos os direitos reservados.</p>
     </footer>
 
     <script src="script.js"></script>
