@@ -1,26 +1,29 @@
 const GITHUB_USERNAME = 'g3edes';
 const API_BASE_URL = 'https://api.github.com';
 
+const featuredProjects = [
+    'journey-tcc',
+    'pokemon-go-api',
+    'planify',
+    'api_jest',
+    'bmi_kotlin_ab',
+    'alpha_corp'
+];
+
 const projectCategories = {
     'pokemon-go-api': 'frontend',
     'pdpm-mytrips': 'mobile',
     'planify': 'frontend',
-    'planify-forked': 'frontend',
     'semaforo-micropython': 'mobile',
     'journey-tcc': 'fullstack',
     'api_jest': 'backend',
     'api_whatsapp': 'frontend',
     'api_do_zapzap': 'backend',
-    'api_fatality': 'backend',
     'alpha_corp': 'mobile',
-    'api-render-final': 'backend',
-    'atividadecrud': 'fullstack',
     'bmi_kotlin_ab': 'mobile',
-    'backup-app-guedes': 'mobile',
 };
 
 let allProjects = [];
-let currentFilter = 'all';
 
 document.addEventListener('DOMContentLoaded', () => {
     initMobileMenu();
@@ -32,6 +35,8 @@ document.addEventListener('DOMContentLoaded', () => {
 function initMobileMenu() {
     const hamburger = document.querySelector('.hamburger');
     const navMenu = document.querySelector('.nav-menu');
+
+    if (!hamburger) return;
 
     hamburger.addEventListener('click', () => {
         hamburger.classList.toggle('active');
@@ -54,7 +59,7 @@ async function loadProjects() {
         const data = await response.json();
 
         allProjects = data
-            .filter(repo => !repo.fork && repo.language)
+            .filter(repo => !repo.fork && repo.language && featuredProjects.includes(repo.name.toLowerCase()))
             .map(repo => ({
                 id: repo.id,
                 name: repo.name,
@@ -67,11 +72,9 @@ async function loadProjects() {
                 updated: new Date(repo.updated_at),
                 category: projectCategories[repo.name.toLowerCase()] || 'other',
             }))
-            .sort((a, b) => b.updated - a.updated)
-            .slice(0, 12);
+            .sort((a, b) => b.updated - a.updated);
 
         renderProjects(allProjects);
-        initFilterButtons();
     } catch (error) {
         console.error('Erro ao carregar projetos:', error);
         projectsGrid.innerHTML = '<div class="loading">Erro ao carregar projetos. Tente novamente mais tarde.</div>';
@@ -131,44 +134,27 @@ function createProjectCard(project) {
     return card;
 }
 
-function initFilterButtons() {
-    const filterBtns = document.querySelectorAll('.filter-btn');
-
-    filterBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            filterBtns.forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-
-            currentFilter = btn.getAttribute('data-filter');
-            filterProjects(currentFilter);
-        });
-    });
-}
-
-function filterProjects(filter) {
-    if (filter === 'all') {
-        renderProjects(allProjects);
-    } else {
-        const filtered = allProjects.filter(p => p.category === filter);
-        renderProjects(filtered);
-    }
-}
-
 async function loadUserStats() {
     try {
         const response = await fetch(`${API_BASE_URL}/users/${GITHUB_USERNAME}`);
         const user = await response.json();
 
-        document.getElementById('repoCount').textContent = user.public_repos;
-        document.getElementById('followerCount').textContent = user.followers;
-        document.getElementById('followingCount').textContent = user.following;
+        const repoCount = document.getElementById('repoCount');
+        const followerCount = document.getElementById('followerCount');
+        const followingCount = document.getElementById('followingCount');
+
+        if (repoCount) repoCount.textContent = user.public_repos;
+        if (followerCount) followerCount.textContent = user.followers;
+        if (followingCount) followingCount.textContent = user.following;
     } catch (error) {
-        console.error('Erro ao carregar estatísticas do usuário:', error);
+        console.error('Erro ao carregar estatísticas:', error);
     }
 }
 
 function initFormHandler() {
     const form = document.getElementById('contactForm');
+
+    if (!form) return;
 
     form.addEventListener('submit', (e) => {
         e.preventDefault();
@@ -178,7 +164,7 @@ function initFormHandler() {
         const subject = document.getElementById('subject').value;
         const message = document.getElementById('message').value;
 
-        const mailtoLink = `mailto:gabriel.guedes@itecnologia.com.br?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Nome: ${name}\nEmail: ${email}\n\n${message}`)}`;
+        const mailtoLink = `mailto:gsilvaguedes4@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Nome: ${name}\nEmail: ${email}\n\n${message}`)}`;
 
         window.location.href = mailtoLink;
 
