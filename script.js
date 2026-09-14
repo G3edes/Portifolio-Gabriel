@@ -20,20 +20,57 @@ const projectEmojis = {
 };
 
 const projectCategories = {
-    'pokemon-go-api': 'Frontend',
-    'planify': 'Frontend',
-    'journey-tcc': 'Full Stack',
-    'api_jest': 'Backend',
-    'bmi_kotlin_ab': 'Mobile',
-    'alpha_corp': 'IoT/Python',
+    'pokemon-go-api': { pt: 'Frontend', en: 'Frontend' },
+    'planify': { pt: 'Frontend', en: 'Frontend' },
+    'journey-tcc': { pt: 'Full Stack', en: 'Full Stack' },
+    'api_jest': { pt: 'Backend', en: 'Backend' },
+    'bmi_kotlin_ab': { pt: 'Mobile', en: 'Mobile' },
+    'alpha_corp': { pt: 'IoT/Python', en: 'IoT/Python' },
 };
 
+let currentLanguage = localStorage.getItem('language') || 'pt';
+
 document.addEventListener('DOMContentLoaded', () => {
+    setLanguage(currentLanguage);
+    initLanguageSwitcher();
     initMobileMenu();
     loadProjects();
     initFormHandler();
     initScrollAnimations();
 });
+
+function initLanguageSwitcher() {
+    const langBtns = document.querySelectorAll('.lang-btn');
+
+    langBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const lang = btn.getAttribute('data-lang');
+            setLanguage(lang);
+            localStorage.setItem('language', lang);
+        });
+    });
+}
+
+function setLanguage(lang) {
+    currentLanguage = lang;
+
+    // Update lang attribute
+    document.documentElement.lang = lang === 'en' ? 'en' : 'pt-BR';
+
+    // Update all elements with data-pt and data-en
+    document.querySelectorAll('[data-pt][data-en]').forEach(el => {
+        if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+            el.placeholder = lang === 'en' ? el.getAttribute('data-en-placeholder') : el.getAttribute('data-pt-placeholder');
+        } else {
+            el.textContent = lang === 'en' ? el.getAttribute('data-en') : el.getAttribute('data-pt');
+        }
+    });
+
+    // Update lang button states
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+    });
+}
 
 function initMobileMenu() {
     const hamburger = document.querySelector('.hamburger');
@@ -64,21 +101,22 @@ async function loadProjects() {
             .map(repo => ({
                 id: repo.id,
                 name: repo.name,
-                description: repo.description || 'A creative digital project',
+                description: repo.description || (currentLanguage === 'en' ? 'A creative digital project' : 'Um projeto digital criativo'),
                 language: repo.language,
                 stars: repo.stargazers_count,
                 forks: repo.forks_count,
                 url: repo.html_url,
                 homepage: repo.homepage,
                 updated: new Date(repo.updated_at),
-                category: projectCategories[repo.name.toLowerCase()] || 'Project',
+                category: projectCategories[repo.name.toLowerCase()] || { pt: 'Projeto', en: 'Project' },
             }))
             .sort((a, b) => b.updated - a.updated);
 
         workGrid.innerHTML = '';
 
         if (projects.length === 0) {
-            workGrid.innerHTML = '<div class="work-loading">Loading projects...</div>';
+            const loadingText = currentLanguage === 'en' ? 'Loading projects...' : 'Carregando projetos...';
+            workGrid.innerHTML = `<div class="work-loading">${loadingText}</div>`;
             return;
         }
 
@@ -88,7 +126,6 @@ async function loadProjects() {
             workGrid.appendChild(card);
         });
 
-        // Add animation
         const style = document.createElement('style');
         style.textContent = `
             @keyframes fadeInUp {
@@ -106,7 +143,8 @@ async function loadProjects() {
 
     } catch (error) {
         console.error('Error loading projects:', error);
-        workGrid.innerHTML = '<div class="work-loading">Error loading projects. Check GitHub API.</div>';
+        const errorText = currentLanguage === 'en' ? 'Error loading projects. Check GitHub API.' : 'Erro ao carregar projetos. Verifique GitHub API.';
+        workGrid.innerHTML = `<div class="work-loading">${errorText}</div>`;
     }
 }
 
@@ -115,6 +153,11 @@ function createProjectCard(project) {
     card.className = 'work-card';
 
     const emoji = projectEmojis[project.name.toLowerCase()] || '📦';
+    const category = typeof project.category === 'object'
+        ? project.category[currentLanguage]
+        : project.category;
+    const demoText = currentLanguage === 'en' ? 'Live Demo' : 'Demonstração';
+    const githubText = currentLanguage === 'en' ? 'GitHub' : 'GitHub';
 
     card.innerHTML = `
         <div class="work-image">${emoji}</div>
@@ -123,11 +166,11 @@ function createProjectCard(project) {
             <p class="work-description">${escapeHtml(project.description.substring(0, 100))}${project.description.length > 100 ? '...' : ''}</p>
             <div class="work-tech">
                 <span class="tech-tag">${project.language}</span>
-                <span class="tech-tag">${project.category}</span>
+                <span class="tech-tag">${category}</span>
             </div>
             <div class="work-links">
-                <a href="${project.url}" target="_blank" rel="noopener noreferrer" class="work-link">GitHub</a>
-                ${project.homepage ? `<a href="${project.homepage}" target="_blank" rel="noopener noreferrer" class="work-link">Live Demo</a>` : ''}
+                <a href="${project.url}" target="_blank" rel="noopener noreferrer" class="work-link">${githubText}</a>
+                ${project.homepage ? `<a href="${project.homepage}" target="_blank" rel="noopener noreferrer" class="work-link">${demoText}</a>` : ''}
             </div>
         </div>
     `;
@@ -147,7 +190,8 @@ function initFormHandler() {
         const email = document.getElementById('email').value;
         const message = document.getElementById('message').value;
 
-        const mailtoLink = `mailto:gsilvaguedes4@gmail.com?subject=Contact from Portfolio&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`)}`;
+        const subject = currentLanguage === 'en' ? 'Contact from Portfolio' : 'Contato do Portfólio';
+        const mailtoLink = `mailto:gsilvaguedes4@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`)}`;
 
         window.location.href = mailtoLink;
         form.reset();
@@ -187,7 +231,7 @@ function escapeHtml(text) {
     return text.replace(/[&<>"']/g, m => map[m]);
 }
 
-// Add smooth scroll behavior for nav links
+// Smooth scroll for nav links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         const href = this.getAttribute('href');

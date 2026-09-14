@@ -125,6 +125,35 @@ button {
     color: var(--primary-dark);
 }
 
+.language-switcher {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-left: 2rem;
+}
+
+.lang-btn {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    transition: all var(--transition);
+}
+
+.lang-btn:hover {
+    color: var(--text-primary);
+}
+
+.lang-btn.active {
+    color: var(--accent-cyan);
+    background: rgba(0, 212, 255, 0.1);
+}
+
+.lang-divider {
+    color: var(--border-color);
+}
+
 .hamburger {
     display: none;
     flex-direction: column;

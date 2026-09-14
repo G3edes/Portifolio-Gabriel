@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>G3EDES — Developer & Digital Studio</title>
+    <title data-pt="G3EDES — Desenvolvedor Digital" data-en="G3EDES — Digital Developer">G3EDES — Desenvolvedor Digital</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -14,11 +14,16 @@
                 <span class="logo-accent">G</span><span>3EDES</span>
             </a>
             <ul class="nav-menu">
-                <li><a href="#work">Work</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#contact" class="nav-cta">Contact</a></li>
+                <li><a href="#work" data-pt="Trabalho" data-en="Work">Trabalho</a></li>
+                <li><a href="#about" data-pt="Sobre" data-en="About">Sobre</a></li>
+                <li><a href="#skills" data-pt="Habilidades" data-en="Skills">Habilidades</a></li>
+                <li><a href="#contact" class="nav-cta" data-pt="Contato" data-en="Contact">Contato</a></li>
             </ul>
+            <div class="language-switcher">
+                <button class="lang-btn active" data-lang="pt">PT</button>
+                <span class="lang-divider">/</span>
+                <button class="lang-btn" data-lang="en">EN</button>
+            </div>
             <button class="hamburger">
                 <span></span>
                 <span></span>
@@ -32,19 +37,16 @@
         <div class="hero-content">
             <div class="hero-text">
                 <h1 class="hero-title">
-                    <span class="line">Digital</span>
+                    <span class="line" data-pt="Digital" data-en="Digital">Digital</span>
                     <span class="line">
-                        <span class="highlight">Developer</span>
+                        <span class="highlight" data-pt="Desenvolvedor" data-en="Developer">Desenvolvedor</span>
                     </span>
                 </h1>
-                <p class="hero-subtitle">Crafting intuitive digital experiences through code</p>
-                <p class="hero-description">
-                    Full Stack developer with expertise in JavaScript, Python, and modern web technologies.
-                    Building interfaces that matter.
-                </p>
+                <p class="hero-subtitle" data-pt="Criando experiências digitais intuitivas através de código" data-en="Crafting intuitive digital experiences through code">Criando experiências digitais intuitivas através de código</p>
+                <p class="hero-description" data-pt="Desenvolvedor Full Stack com expertise em JavaScript, Python e tecnologias web modernas. Construindo interfaces que importam." data-en="Full Stack developer with expertise in JavaScript, Python, and modern web technologies. Building interfaces that matter.">Desenvolvedor Full Stack com expertise em JavaScript, Python e tecnologias web modernas. Construindo interfaces que importam.</p>
                 <div class="hero-actions">
-                    <a href="#work" class="btn btn-primary">Explore Work</a>
-                    <a href="Curriculo_Gabriel_Silva_Guedes.pdf" download class="btn btn-secondary">Download CV</a>
+                    <a href="#work" class="btn btn-primary" data-pt="Explorar Trabalho" data-en="Explore Work">Explorar Trabalho</a>
+                    <a href="Curriculo_Gabriel_Silva_Guedes.pdf" download class="btn btn-secondary" data-pt="Baixar CV" data-en="Download CV">Baixar CV</a>
                 </div>
             </div>
             <div class="hero-visual">
@@ -55,7 +57,7 @@
             </div>
         </div>
         <div class="hero-scroll">
-            <span>Scroll to explore</span>
+            <span data-pt="Rolar para explorar" data-en="Scroll to explore">Rolar para explorar</span>
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
                 <path d="M12 5v14M19 14l-7 7-7-7"/>
             </svg>
@@ -66,30 +68,24 @@
     <section id="about" class="about">
         <div class="about-content">
             <div class="about-text">
-                <h2 class="section-title">About Me</h2>
-                <p>
-                    Systems Information student with practical experience in technical support and software development.
-                    Passionate about creating elegant solutions to complex problems through clean, maintainable code.
-                </p>
-                <p>
-                    Currently working at Inova Tecnologia as a Technical Support Intern (N1/N2), handling database migrations,
-                    SQL queries, and system troubleshooting. Continuously learning and exploring new technologies.
-                </p>
+                <h2 class="section-title" data-pt="Sobre Mim" data-en="About Me">Sobre Mim</h2>
+                <p data-pt="Estudante de Sistemas de Informação com experiência prática em suporte técnico e desenvolvimento de software. Apaixonado por criar soluções elegantes para problemas complexos através de código limpo e mantível." data-en="Systems Information student with practical experience in technical support and software development. Passionate about creating elegant solutions to complex problems through clean, maintainable code.">Estudante de Sistemas de Informação com experiência prática em suporte técnico e desenvolvimento de software. Apaixonado por criar soluções elegantes para problemas complexos através de código limpo e mantível.</p>
+                <p data-pt="Atualmente trabalhando na Inova Tecnologia como Estagiário de Suporte Técnico (N1/N2), lidando com migrações de banco de dados, queries SQL e troubleshooting de sistemas. Aprendendo continuamente e explorando novas tecnologias." data-en="Currently working at Inova Tecnologia as a Technical Support Intern (N1/N2), handling database migrations, SQL queries, and system troubleshooting. Continuously learning and exploring new technologies.">Atualmente trabalhando na Inova Tecnologia como Estagiário de Suporte Técnico (N1/N2), lidando com migrações de banco de dados, queries SQL e troubleshooting de sistemas. Aprendendo continuamente e explorando novas tecnologias.</p>
             </div>
             <div class="about-grid">
                 <div class="about-card">
-                    <h3>Education</h3>
+                    <h3 data-pt="Educação" data-en="Education">Educação</h3>
                     <ul>
-                        <li>Bachelor's in Systems Information (2026-2030) — UNINOVE</li>
-                        <li>Systems Analysis & Development (2024-2025) — SENAI</li>
+                        <li data-pt="Bacharelado em Sistemas de Informação (2026-2030) — UNINOVE" data-en="Bachelor's in Systems Information (2026-2030) — UNINOVE">Bacharelado em Sistemas de Informação (2026-2030) — UNINOVE</li>
+                        <li data-pt="Análise e Desenvolvimento de Sistemas (2024-2025) — SENAI" data-en="Systems Analysis & Development (2024-2025) — SENAI">Análise e Desenvolvimento de Sistemas (2024-2025) — SENAI</li>
                     </ul>
                 </div>
                 <div class="about-card">
-                    <h3>Experience</h3>
+                    <h3 data-pt="Experiência" data-en="Experience">Experiência</h3>
                     <ul>
-                        <li>Technical Support (N1/N2) — Inova Tecnologia (2026-Current)</li>
-                        <li>SQL & Database Administration</li>
-                        <li>System Configuration & Maintenance</li>
+                        <li data-pt="Suporte Técnico (N1/N2) — Inova Tecnologia (2026-Atual)" data-en="Technical Support (N1/N2) — Inova Tecnologia (2026-Current)">Suporte Técnico (N1/N2) — Inova Tecnologia (2026-Atual)</li>
+                        <li data-pt="Administração SQL & Banco de Dados" data-en="SQL & Database Administration">Administração SQL & Banco de Dados</li>
+                        <li data-pt="Configuração e Manutenção de Sistemas" data-en="System Configuration & Maintenance">Configuração e Manutenção de Sistemas</li>
                     </ul>
                 </div>
             </div>
@@ -98,23 +94,21 @@
 
     <!-- Work Section -->
     <section id="work" class="work">
-        <h2 class="section-title">Featured Work</h2>
+        <h2 class="section-title" data-pt="Trabalho em Destaque" data-en="Featured Work">Trabalho em Destaque</h2>
         <div class="work-grid" id="workGrid">
-            <div class="work-loading">Loading projects...</div>
+            <div class="work-loading" data-pt="Carregando projetos..." data-en="Loading projects...">Carregando projetos...</div>
         </div>
         <div class="work-cta">
-            <a href="https://github.com/g3edes" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
-                View All on GitHub →
-            </a>
+            <a href="https://github.com/g3edes" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" data-pt="Ver Todos no GitHub →" data-en="View All on GitHub →">Ver Todos no GitHub →</a>
         </div>
     </section>
 
     <!-- Skills Section -->
     <section id="skills" class="skills">
-        <h2 class="section-title">Technical Arsenal</h2>
+        <h2 class="section-title" data-pt="Arsenal Técnico" data-en="Technical Arsenal">Arsenal Técnico</h2>
         <div class="skills-container">
             <div class="skill-column">
-                <h3>Languages</h3>
+                <h3 data-pt="Linguagens" data-en="Languages">Linguagens</h3>
                 <div class="skill-tags">
                     <span class="skill-tag">Python</span>
                     <span class="skill-tag">JavaScript</span>
@@ -124,7 +118,7 @@
                 </div>
             </div>
             <div class="skill-column">
-                <h3>Frontend</h3>
+                <h3 data-pt="Frontend" data-en="Frontend">Frontend</h3>
                 <div class="skill-tags">
                     <span class="skill-tag">React</span>
                     <span class="skill-tag">HTML5</span>
@@ -133,7 +127,7 @@
                 </div>
             </div>
             <div class="skill-column">
-                <h3>Backend</h3>
+                <h3 data-pt="Backend" data-en="Backend">Backend</h3>
                 <div class="skill-tags">
                     <span class="skill-tag">Node.js</span>
                     <span class="skill-tag">Express</span>
@@ -142,7 +136,7 @@
                 </div>
             </div>
             <div class="skill-column">
-                <h3>Databases</h3>
+                <h3 data-pt="Banco de Dados" data-en="Databases">Banco de Dados</h3>
                 <div class="skill-tags">
                     <span class="skill-tag">SQL Server</span>
                     <span class="skill-tag">MySQL</span>
@@ -151,7 +145,7 @@
                 </div>
             </div>
             <div class="skill-column">
-                <h3>Mobile</h3>
+                <h3 data-pt="Mobile" data-en="Mobile">Mobile</h3>
                 <div class="skill-tags">
                     <span class="skill-tag">Kotlin</span>
                     <span class="skill-tag">Android</span>
@@ -159,7 +153,7 @@
                 </div>
             </div>
             <div class="skill-column">
-                <h3>Tools</h3>
+                <h3 data-pt="Ferramentas" data-en="Tools">Ferramentas</h3>
                 <div class="skill-tags">
                     <span class="skill-tag">Git</span>
                     <span class="skill-tag">GitHub</span>
@@ -173,16 +167,16 @@
     <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="contact-content">
-            <h2 class="section-title">Let's Create Something</h2>
-            <p class="contact-subtitle">I'm always interested in hearing about new projects and opportunities.</p>
+            <h2 class="section-title" data-pt="Vamos Criar Algo?" data-en="Let's Create Something">Vamos Criar Algo?</h2>
+            <p class="contact-subtitle" data-pt="Sempre interessado em ouvir sobre novos projetos e oportunidades." data-en="I'm always interested in hearing about new projects and opportunities.">Sempre interessado em ouvir sobre novos projetos e oportunidades.</p>
 
             <div class="contact-grid">
                 <div class="contact-method">
-                    <h3>Email</h3>
+                    <h3 data-pt="Email" data-en="Email">Email</h3>
                     <a href="mailto:gsilvaguedes4@gmail.com">gsilvaguedes4@gmail.com</a>
                 </div>
                 <div class="contact-method">
-                    <h3>Phone</h3>
+                    <h3 data-pt="Telefone" data-en="Phone">Telefone</h3>
                     <a href="tel:+5511978941322">(11) 97894-1322</a>
                 </div>
                 <div class="contact-method">
@@ -197,22 +191,22 @@
 
             <form class="contact-form" id="contactForm">
                 <div class="form-group">
-                    <input type="text" id="name" placeholder="Your name" required>
+                    <input type="text" id="name" placeholder="Seu nome" data-pt-placeholder="Seu nome" data-en-placeholder="Your name" required>
                 </div>
                 <div class="form-group">
-                    <input type="email" id="email" placeholder="Your email" required>
+                    <input type="email" id="email" placeholder="Seu email" data-pt-placeholder="Seu email" data-en-placeholder="Your email" required>
                 </div>
                 <div class="form-group">
-                    <textarea id="message" placeholder="Your message" rows="5" required></textarea>
+                    <textarea id="message" placeholder="Sua mensagem" data-pt-placeholder="Sua mensagem" data-en-placeholder="Your message" rows="5" required></textarea>
                 </div>
-                <button type="submit" class="btn btn-primary">Send Message</button>
+                <button type="submit" class="btn btn-primary" data-pt="Enviar Mensagem" data-en="Send Message">Enviar Mensagem</button>
             </form>
         </div>
     </section>
 
     <!-- Footer -->
     <footer class="footer">
-        <p>© 2026 G3EDES. Crafted with code and creativity.</p>
+        <p data-pt="© 2026 G3EDES. Crafted with code and creativity." data-en="© 2026 G3EDES. Crafted with code and creativity.">© 2026 G3EDES. Crafted with code and creativity.</p>
     </footer>
 
     <script src="script.js"></script>
